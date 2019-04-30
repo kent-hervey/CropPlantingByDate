@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Planting Guide Enter Dates</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            $(document).ready(function(){
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1; //January is 0!
+                var yyyy = today.getFullYear();
+                if(dd<10){
+                        dd='0'+dd
+                    } 
+                    if(mm<10){
+                        mm='0'+mm
+                    } 
+
+                today = yyyy+'-'+mm+'-'+dd;
+                console.log(today)
+                document.getElementById('returnedBeginDate').setAttribute('min', today);
+                document.getElementById('returnedEndDate').setAttribute('min', today);
+            })
+        </script>
+
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="container2">
+            <h1>
+                Welcome to the Crop Planter Guide by Harvest Date
+            </h1>
+            <h3>
+                This tool helps you decide what to plant today based on desired harvest dates
+            </h3>
+
+            <h4>Instructions:  Enter two dates below between which you want to be able to obtain your First harvest.  Naturally more days between your dates/in your range result in more crops.
+                <br><br>
+                
+                After submitting (response times are typically 20 seconds, but can be up to a minute) you will see a table including:
+                    <ul>
+                        <li>
+                            Crop Name
+                        </li>
+                        <li>
+                            Wikipedia Link
+                        </li>
+                        <li>
+                            Date you should first expect to harvest
+                        </li>
+                        <li>
+                            Date you should expect last harvest
+                        </li>
+                        <li>
+                            Perinnial or not (Annual)
+                        </li>
+                    </li>
+            </h4>
+            <fieldset>
+                <form action="/plancrop/success" method="POST">
+                    
+                    <p>
+                        <label for='returnedBeginDate'>Enter earliest desired harvest date</label>
+                        <input type='date' id='returnedBeginDate' name='returnedBeginDate' value="" min='1899-01-01' max='2200-13-13' required>
+                    </p>
+                    <p>
+                        <label for='returnedEndDate'>Enter date, latest first harvest</label>
+                        <input type='date' id='returnedEndDate' name='returnedEndDate' value="" min='1899-01-01' max='2200-13-13' required>
+                    </p>
+
+                    <input type="submit" id="submitDate" value="Submit">
+                </form>
+            </fieldset>
+        </div>
+        <script src="" async defer></script>
+
+
+
+
+    </body>
+</html>
