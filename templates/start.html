@@ -10,12 +10,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Planting Guide Enter Dates</title>
+        <title>Crop Planting, Date Entry</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <script>
             $(document).ready(function(){
+                //Below JavaScript sets the minimum date entry to be today's date.
                 var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth()+1; //January is 0!
@@ -53,7 +54,7 @@
             <h4>Instructions:  Enter two dates below between which you want to be able to obtain your First harvest.  Naturally more days between your dates/in your range result in more crops.
                 <br><br>
                 
-                After submitting (response times are typically 20 seconds, but can be up to a minute) you will see a table including:
+                After submitting (<span class="loadwarning" >response times are typically less than 20 seconds, but can be up to a minute</span>) you will see a table including:
                     <ul>
                         <li>
                             Crop Name
@@ -83,10 +84,17 @@
                         <label for='returnedEndDate'>Enter date, latest first harvest</label>
                         <input type='date' id='returnedEndDate' name='returnedEndDate' value="" min='1899-01-01' max='2200-13-13' required>
                     </p>
-
+                    <p class='warningmmyydd'>PLEASE REMEMBER TO ENTER DATES AS mm/dd/yyyy</p> 
                     <input type="submit" id="submitDate" value="Submit">
                 </form>
+                
             </fieldset>
+            <p class='explanation'>
+                This tool uses source data from <a href="http://growstuff.org/">http://growstuff.org/</a><br>
+                Results are based on expected time to harvest in days.  <br>
+                Weather, sunlight for your location/time of year, soil/air temperatures are not factored.<br>
+                <a href="mailto:kenthervey+cropapp@gmail.com?subject=Crop App user">Contact Me</a>
+            </p>
         </div>
         <script src="" async defer></script>
 

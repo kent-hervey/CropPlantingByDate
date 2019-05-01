@@ -4,11 +4,6 @@ from getCatalogFrAPI import make_catalog
 
 app = Flask(__name__)
 
-# @app.route('/plancrop/success')
-# def success():
-#     catalog_result=make_catalog(95,98)
-#     return render_template("success.html", returned_crops=catalog_result)
-
 @app.route('/plancrop')
 def dateEntry(): #renders the date entry html template
     print("beginning of plancrop route")
