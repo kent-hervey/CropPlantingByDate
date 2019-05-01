@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Crop Planting By Date
 =====================
 
@@ -24,3 +25,7 @@ Enhancements could include:
 
 
 
+=======
+# CropPlantingByDate
+Crop Planting based on expected harvest date using Growstuff API
+>>>>>>> 4f4dffe0d601f41a2a6d6dd257876b2152bfad8b
