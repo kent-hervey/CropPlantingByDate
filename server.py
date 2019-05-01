@@ -14,7 +14,7 @@ def dateEntry(): #renders the date entry html template
 @app.route('/plancrop/success', methods=['POST'])
 def success():
     print("beginning of success route")
-    today = datetime.now(pytz.timezone('US/Central'))
+    today = datetime.now(pytz.timezone('US/Central')) #hardcoded time zone for now
     returned_begin_date=request.form['returnedBeginDate']
     returned_begin_date_wTZ=str(returned_begin_date+'--0600')
     returned_begin_date_obj=datetime.strptime(returned_begin_date_wTZ, '%Y-%m-%d-%z')
