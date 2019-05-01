@@ -1,0 +1,18 @@
+
+
+Below represents code before any time zone coding, pre 5/1/19
+    print("beginning of success route")
+    today = datetime.now()
+    returned_begin_date=request.form['returnedBeginDate']
+    returned_begin_date_obj=datetime.strptime(returned_begin_date, '%Y-%m-%d')
+    days_to_returned_begin_date =(returned_begin_date_obj - today).days+1
+    output_begin_string1 = "Earliest first harvest date:  " + returned_begin_date + "  which is  " + str(days_to_returned_begin_date) + " days from now"
+
+    returned_end_date=request.form['returnedEndDate']
+    returned_end_date_obj=datetime.strptime(returned_end_date, '%Y-%m-%d')
+    days_to_returned_end_date =(returned_end_date_obj - today).days+1
+    output_begin_string2 = "Latest first harvest date:  " + returned_end_date + "  which is  " + str(days_to_returned_end_date) + " days from now"
+
+
+    catalog_result=make_catalog(days_to_returned_begin_date,days_to_returned_end_date)
+    return render_template("success.html", returned_crops=catalog_result, beginString=output_begin_string1, endString=output_begin_string2)
