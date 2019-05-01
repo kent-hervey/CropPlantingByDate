@@ -1,0 +1,7 @@
+my_environments/
+venv/
+__pycache__/
+*.pyc
+*.doc
+*.docx
+*.ppt*

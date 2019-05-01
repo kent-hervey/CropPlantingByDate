@@ -51,9 +51,24 @@
                 This tool helps you decide what to plant today based on desired harvest dates
             </h3>
 
-            <h4>Instructions:  Enter two dates below between which you want to be able to obtain your First harvest.  Naturally more days between your dates/in your range result in more crops.
-                <br><br>
+
+            <fieldset>
+                <form action="/plancrop/success" method="POST">
+                    
+                    <p>
+                        <label for='returnedBeginDate'>Earliest harvest date</label>
+                        <input type='date' id='returnedBeginDate' name='returnedBeginDate' value="" min='1899-01-01' max='2200-13-13' required>
+                    </p>
+                    <p>
+                        <label for='returnedEndDate'>Latest harvest date</label>
+                        <input type='date' id='returnedEndDate' name='returnedEndDate' value="" min='1899-01-01' max='2200-13-13' required>
+                    </p>
+                    <p class='warningmmyydd'>PLEASE REMEMBER TO ENTER DATES AS mm/dd/yyyy</p> 
+                    <input type="submit" id="submitDate" value="Submit">
+                </form>
                 
+            </fieldset>
+            <h4>
                 After submitting (<span class="loadwarning" >response times are typically less than 20 seconds, but can be up to a minute</span>) you will see a table including:
                     <ul>
                         <li>
@@ -73,22 +88,6 @@
                         </li>
                     </li>
             </h4>
-            <fieldset>
-                <form action="/plancrop/success" method="POST">
-                    
-                    <p>
-                        <label for='returnedBeginDate'>Earliest harvest date</label>
-                        <input type='date' id='returnedBeginDate' name='returnedBeginDate' value="" min='1899-01-01' max='2200-13-13' required>
-                    </p>
-                    <p>
-                        <label for='returnedEndDate'>Latest harvest date</label>
-                        <input type='date' id='returnedEndDate' name='returnedEndDate' value="" min='1899-01-01' max='2200-13-13' required>
-                    </p>
-                    <p class='warningmmyydd'>PLEASE REMEMBER TO ENTER DATES AS mm/dd/yyyy</p> 
-                    <input type="submit" id="submitDate" value="Submit">
-                </form>
-                
-            </fieldset>
             <p class='explanation'>
                 This tool uses source data from <a href="http://growstuff.org/">http://growstuff.org/</a><br>
                 Results are based on expected time to harvest in days.  <br>
