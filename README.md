@@ -20,7 +20,7 @@ Growstuff uses a powerful method to grow and maintain its database using a kind 
 Enhancements could include:
   * Copying down the database once per week to reduce load times
   * Some references to a locations air temperature, soil temperature and daylight hours.  This information is readily available given lat/lon.  I have not found an API that connects a specific crop to those location/season based parameters
-
+  * Currently the tool assumes planting today.  Feature could allow user to specify planned planting date
 
 
 
