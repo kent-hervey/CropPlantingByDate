@@ -1,7 +1,7 @@
 import json,urllib.request
 from datetime import *
 
-#def make_catalog(users_early_days_first_harvest, users_late_days_first_harvest,expected_planting_date):
+
 def make_catalog(users_early_days_first_harvest, users_late_days_first_harvest):
 
     cat_dicts=[]
